@@ -1,9 +1,23 @@
 <div id="post">
 
-<form method= "POST" action="/post">
+<form method= "POST" action="/post" id="blog">
   <label for="body">DAAAMNN WHAT HAPPENED TO YOU?</label>
   <input type="text" name="name">
   <input type="submit">
 </form>
+
+<h3>Your Posts:</h3>
+	
+	<div class = "user_post">
+	
+	  <% @posts.each do |post| %>
+	
+	  <p class = "post_body">  
+	    Daaaaamnnnn...<%= post.body %>
+	  </p>
+	
+	  <% end %>  
+	
+	</div>
 
 </div>

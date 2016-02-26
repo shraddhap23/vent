@@ -29,7 +29,7 @@ post "/signup" do
   User.create(name: params[:name], email: params[:email], password: params[:password])
   # this is where we put the flash message 
   puts "my params are" + params.inspect
-  	redirect "/profile"
+  	redirect "/posts"
 end
 
 get "/login" do
@@ -43,20 +43,19 @@ end
 post "/login" do
   @user = User.where(name: params[:name]).first
   if @user.password == params[:password]
-		redirect "/profile"
+		redirect "/posts"
   else
     redirect "/login"# flash message here to say combination is not ok 
   end 
 end
 
-get "/profile" do 
-	erb :profile
-end
 
 get "/posts" do 
+	@posts = Post.all
 	erb :posts
 end 
 
-# post "/post" do
-# end
-
+post "/posts" do 
+  Post.create(user_id: current_user.id, body: params[:body])
+  redirect "/posts"
+end
