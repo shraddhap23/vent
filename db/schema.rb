@@ -11,16 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225203755) do
+ActiveRecord::Schema.define(version: 20160226184159) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "body"
     t.string  "user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string  "name"
+    t.string  "birthday"
+    t.string  "location"
+    t.string  "email"
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
   end
 
 end

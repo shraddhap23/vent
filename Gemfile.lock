@@ -23,6 +23,8 @@ GEM
     rack-protection (1.5.3)
       rack
     rake (10.5.0)
+    shotgun (0.9.1)
+      rack (>= 1.0)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -30,6 +32,8 @@ GEM
     sinatra-activerecord (2.0.9)
       activerecord (>= 3.2)
       sinatra (~> 1.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sqlite3 (1.3.11)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -42,7 +46,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   rake
+  shotgun
   sinatra-activerecord
+  sinatra-flash
   sqlite3
 
 BUNDLED WITH
