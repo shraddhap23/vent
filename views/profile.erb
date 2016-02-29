@@ -1,1 +1,48 @@
-"Hi this is my profile"
+<div class="Account">
+  <h3>Current Information</h3>
+  <ul id="currentInfo">  
+    <p class = "current_name">
+      <%= @current_user.name %>
+    </p>
+    <p class = "current_email">
+      <%= @current_user.email %>
+    </p>
+  </ul>
+
+</div>
+
+<div id="accountInfo">
+
+  <form method= "POST" action="/update">
+    <label>New Info</label><br><hr>
+    <input type="text" name="name" placeholder="New Name"/><br>
+    <input type="text" name="birthday" placeholder="New Birthday"/><br>
+    <input type="text" name="location" placeholder="New Location"/><br>
+    <input type="email" name="email" placeholder="New Email"/><br>
+    <br>
+    <input type="submit" value="Update Account">
+
+  </form>
+
+</div>
+
+
+<br>
+
+<div id="goback">
+  <form method="get" action="/goback">
+    <input type="submit" value="Go Back to Profile">
+  </form>
+</div>
+
+<div id="logout">
+  <form method="get" action="/logout">
+    <input type="submit" value="Logout">
+  </form>
+</div> 
+
+<div id="delete">
+  <form method="post" action="/delete">
+    <input type="submit" value="Delete Account">
+  </form>
+</div>
