@@ -1,0 +1,73 @@
+body {
+  background-image: url("images/rsz_1signback.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+img {
+  margin-left: 29px;
+}
+
+form {
+  margin-left: 350px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  opacity: 0.9;
+}
+
+label {
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 15px;
+  text-align: center;
+  color: #FF00CC;
+}
+
+input {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  color: #FF00CC;
+  margin-left: 10px;
+  display: inline-block;
+/*  color: rgb(134, 43, 224);
+  border: #4195fc;*/
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background: purple; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    margin-bottom: 20px;
+    margin-left: 50px;
+    color: white;
+}
+
+p{
+  font-family: 'Amatic SC', cursive;
+  color: black;
+  font-size: 50px;
+  margin-left: 400px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+a:hover {
+  text-decoration: none;
+  font-family: 'Amatic SC', cursive;
+  color: purple;
+
+}
