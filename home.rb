@@ -51,8 +51,11 @@ get "/posts" do
   if session[:user_id] == nil
     redirect "/"
   end
-	@posts = Post.all
+	
   @ten_posts = Post.last(10)
+  @users = User.find(session[:user_id])
+  @posts = Post.where(user_id: session[:user_id])
+
 	erb :posts
 end 
 

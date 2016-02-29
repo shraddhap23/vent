@@ -1,7 +1,10 @@
+<link rel="stylesheet" type="text/css" href="posts.css">
+
 <div id="post">
 
 <form method="POST" action="/posts" id="blog">
-  <label for="body">Hi Bronies, go ahead and talk about your ponies...</label>
+  <!-- <label for="body">Hi Bronies, go ahead and talk about your ponies...</label> -->
+  <h1>Hey Bronies, go ahead and talk about your ponies...</h1>
   <input type="text" name="body" maxlength="150">
   <input type="submit">
 </form>
@@ -9,20 +12,23 @@
 <h2>Your Posts:</h2>
 	
 	<div class = "user_post">
-	  <% @posts.each do |post| %>
+	  <%# @posts.each do |post| %>
 	  <p class = "post_body">  
-	 		<%= post.body %>
+	 		<ul>
+      <% @posts.each do |post|%>
+      <%=post.body%>
+      <%end%>
 	  </p>
-	 	<% end %>  
+	 	<%# end %>  
 	</div>
 
 <div id="accountInfo">
+<%# @users.each do |user| %>
   <h3>Name:</h3>
-    <p><%= @name %></p>
-  <h3>Birthday:</h3>
-  	<p><%= @birthday %></p>
+    <p><%= @users.name %></p>
   <h3>Email:</h3>
-    <p><%= @email %></p>
+    <p><%= @users.email %></p>
+    <%# end %>
 </div>
 
 <div id="preferences">
