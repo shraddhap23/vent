@@ -84,16 +84,15 @@ get "/profile" do
 end
 
 post "/update" do
-  user = current_user
-  user.update_attribute(:name, params[:name]) if params[:name] != ""
-  user.update_attribute(:birthday, params[:birthday]) if params[:name] != ""
-  user.update_attribute(:location, params[:location]) if params[:location] != ""
-  user.update_attribute(:email, params[:email]) if params[:email] != ""
+  @user = current_user
+  user.update_attribute(:name, params[:name]) 
+  user.update_attribute(:email, params[:email]) 
+  user.update_attribute(:password, params[:password]) 
   redirect "/profile"
 end
 
 post "/delete" do
-  user = current_user
+  @user = current_user
   user.destroy
   user_posts = Post.where(user_id: user.id)
   user_posts.each do |post|
