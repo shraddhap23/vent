@@ -1,25 +1,39 @@
-<h1> *types long paragraph*
-<br>
-<br>
-*deletes*</h1>
-
-
 <div id="post">
 
-<form method= "POST" action="/post" id="blog">
-  <label for="body">DAAAMNN WHAT HAPPENED TO YOU?</label>
-  <input type="text" name="content" maxlength="150">
-  <input type="submit" value="Post">
+<form method="POST" action="/posts" id="blog">
+  <label for="body">Hi Bronies, go ahead and talk about your ponies...</label>
+  <input type="text" name="body" maxlength="150">
+  <input type="submit">
 </form>
 
-<h3>Your Posts:</h3>
+<h2>Your Posts:</h2>
 	
 	<div class = "user_post">
 	  <% @posts.each do |post| %>
 	  <p class = "post_body">  
-	    Daaaaamnnnn...<%= post.body %>
+	 		<%= post.body %>
 	  </p>
 	 	<% end %>  
-
-
 	</div>
+
+<div id="accountInfo">
+  <h3>Name:</h3>
+    <p><%= @name %></p>
+  <h3>Birthday:</h3>
+  	<p><%= @birthday %></p>
+  <h3>Email:</h3>
+    <p><%= @email %></p>
+</div>
+
+<div id="preferences">
+	<form method="get" action="/profile">
+		<input type="submit" value="Account Preferences">
+	</form>
+</div>
+
+<div id="logout">
+	<form method="get" action="/logout">
+		<input type="submit" value="Logout">
+	</form>
+</div> 
+

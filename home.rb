@@ -4,6 +4,7 @@ require "./models"
 require "sinatra/flash"
 
 set :database, "sqlite3:vent.db"
+enable :sessions
 set :sessions, true
 
 get "/" do
@@ -14,13 +15,6 @@ get "/users" do
 	@users = User.all
 	erb :users
 end
-
-# get "/newpost" do 
-# 	# user = User.first
-# 	Post.create(body: "The bus ran late and I hate my life",user_id: "user.id")
-
-# 	"New post created"
-# end
 
 get "/signup" do
   erb :signup
@@ -38,10 +32,6 @@ get "/login" do
   erb :login
 end 
 
-get "/users/:id" do 
-  "Id: " + params[:id]
-end
-
 post "/login" do
   @user = User.where(name: params[:name]).first
   if @user && @user.password == params[:password]
@@ -53,8 +43,16 @@ post "/login" do
   end 
 end
 
+def current_user
+  @current_user = User.find(session[:user_id])
+end 
+
 get "/posts" do 
+  if session[:user_id] == nil
+    redirect "/"
+  end
 	@posts = Post.all
+  @ten_posts = Post.last(10)
 	erb :posts
 end 
 
@@ -63,23 +61,32 @@ post "/posts" do
   redirect "/posts"
 end
 
+get "/logout" do
+  session[:user_id] = nil
+  redirect "/"
+end
+
+get "/users/:id" do 
+  "Id: " + params[:id]
+  @posts = Post.where(user_id: params[:id])
+  @name = User.find(params[:id]).name
+  @email = User.find(params[:id]).email  
+  @password = User.find(params[:id]).password
+  erb :users
+end
+
 get "/profile" do 
-  if session[:user_id] == nil
+  @user = current_user
+  if session[:user_id] = nil
     redirect "/"
   end
 	erb :profile
 end
 
-post "/profile" do
-  user = current_user
-
-  user.update_attribute
-
-
-post "/acct" do
+post "/update" do
   user = current_user
   user.update_attribute(:name, params[:name]) if params[:name] != ""
-  user.update_attribute(:birthday, params[:birthday]) if params[:birthday] != ""
+  user.update_attribute(:birthday, params[:birthday]) if params[:name] != ""
   user.update_attribute(:location, params[:location]) if params[:location] != ""
   user.update_attribute(:email, params[:email]) if params[:email] != ""
   redirect "/profile"
@@ -95,6 +102,11 @@ post "/delete" do
   flash[:delete] = "You have succesfully deleted your account"
   session[:user_id] = nil
   redirect "/"
-  end
 end
+
+get "/goback" do 
+  @posts = Post.all
+  erb :posts
+end 
+
 
