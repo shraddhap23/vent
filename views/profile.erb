@@ -1,1 +1,39 @@
-"Hi this is my profile"
+<div id="Account">
+	<h3>Your Account</h3>
+	<ul>
+		<li>Name:</li>
+		<li>Birthday:</li>
+		<li>Location:</li>
+		<li>Email:</li>
+	</ul>
+
+	<ul id="currentInfo">  
+    <li>Current Details</li><br><hr>
+    <li><%= current_user.name %></li><br>
+    <li><%= current_user.birthday %></li><br>
+    <li><%= current_user.location %></li><br>
+    <li><%= current_user.email %></li><br>
+  </ul>
+
+<div id="accountInfo">
+
+	<form method= "POST" action="/profile">
+    <label>New Info</label><br><hr>
+    <input type="text" name="name" placeholder="New Name"/><br>
+    <input type="date" name="birthday" placeholder="New Birthday"/><br>
+    <input type="text" name="location" placeholder="New Location"/><br>
+		<input type="email" name="email" placeholder="New Email"/><br>
+    <br>
+    <input type="submit" value="Update Account">
+
+  </form>
+
+</div>
+
+<br><br><br>
+
+<div id="delete">
+  <form method="post" action="/delete">
+    <input type="submit" value="Delete Account">
+  </form>
+</div>
