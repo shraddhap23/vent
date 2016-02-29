@@ -1,63 +1,56 @@
-body {
-  background-color: white;
-}
-
-header {
-  font-size: 250px;
-  font-family: 'Amatic SC', cursive;
-  text-align: center;
+img {
+/*  width: 800px;*/
 }
 
 p {
   font-family: 'Amatic SC', cursive;
-  text-align: center;
-  font-size: 35px;
-  width: 900px;
-  margin-left: 175px;
+  color: pink;
+  font-size: 50px;
+/*  margin-left: 50px;*/
+
+}
+
+#pic {
+  width: 50px;
+  float: left;
 }
 
 nav {
     list-style:none;
     text-decoration: none;
-    display: inline-block;      
-    font-size: 75px;
+/*    display: inline-block;*/      
+    font-size: 50px;
     font-family: 'Amatic SC', cursive;
-/*    padding-top:30px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;*/
+    color: pink;
     margin-left: 175px;
-/*    padding-left: 80px;*/
-/*    margin-right: 100px;*/
-    text-align: center;
-}
-
-li {
-
-
-
 
 
 }
 
 a {
   text-decoration: none;
+  color: pink;
+
 }
 
 a:hover {
   text-decoration: none;
   font-family: 'Amatic SC', cursive;
-  color: red;
+  color: purple;
 
 }
 
-img {
-  margin-left: 350px;
-  width: 500px;
+body {
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/17/63/f5/1763f54e0556bdb862ff1db6edbeaef8.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  width: 950px;
+/*  background-attachment: fixed;*/
+
 }
 
 form {
-  margin-left: 320px;
+  margin-left: 420px;
   font-family: 'Amatic SC', cursive;
   font-size: 50px;
 
@@ -70,4 +63,36 @@ label {
 input {
   width: 300px;
   height: 50px;
+  font-size: 30px;
+  font-family: 'Amatic SC', cursive;
+  color: rgb(134, 43, 224);
+  border: 3px solid #4195fc;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 75px;
+  text-align: center;
+}
+
+/*.container {
+  display: inline-block;
+  width: 970px;
+  margin-left: 200px;
+  margin-top: 50px;
+
+}*/
+
+.featured {
+  margin-left: 200px;
+  display: inline;
+}
+
+.divider {
+  margin-left: 200px;
+  margin-top: 70px;
+}
+
+.divider_two {
+  margin-left: 170px;
 }
