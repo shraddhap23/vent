@@ -98,7 +98,7 @@ post "/update" do
 end
 
 post "/delete" do
-  user = current_user
+  @user = current_user
   user.destroy
   user_posts = Post.where(user_id: user.id)
   user_posts.each do |post|
