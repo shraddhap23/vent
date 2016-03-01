@@ -2,27 +2,14 @@
 
 <div id="post">
 
+
+
+
 <form method="POST" action="/posts" id="blog">
   <!-- <label for="body">Hi Bronies, go ahead and talk about your ponies...</label> -->
-  <h1>Hey Bronies, go ahead and talk about your ponies...</h1>
-  <input type="text" name="body" maxlength="150">
-  <input type="submit">
-</form>
+ <img alt="My Little Pony Font" src="http://fontmeme.com/freefonts/img.php?f=34791&s=33&t=Hey%20Bronies,%20go%20ahead%20and%20talk%20about%20your%20ponies...&c=FF00CC">
 
-<h2>Your Posts:</h2>
-	
-	<div class = "user_post">
-	  <%# @posts.each do |post| %>
-	  <p class = "post_body">  
-	 		<ul>
-      <% @posts.each do |post|%>
-      <%=post.body%>
-      <%end%>
-	  </p>
-	 	<%# end %>  
-	</div>
-
-<div id="accountInfo">
+ <div id="accountInfo">
 <%# @users.each do |user| %>
   <h3>Name:</h3>
     <p><%= @users.name %></p>
@@ -30,16 +17,36 @@
     <p><%= @users.email %></p>
     <%# end %>
 </div>
+  
+  <input type="text" name="body" maxlength="150">
+  <br>
+  <br>
+  <input type="submit">
+</form>
 
-<div id="preferences">
-	<form method="get" action="/profile">
-		<input type="submit" value="Account Preferences">
-	</form>
+
+<h2>Your Posts:</h2>
+	
+	<div class = "user_post">
+	  <%# @posts.each do |post| %>
+	  <p class = "post_body">  
+      <% @posts.each do |post|%>
+      <%=post.body%>
+      <%end%>
+	  </p>
+	 	<%# end %>  
+	</div>
+
+  <div id="preferences">
+  <form method="get" action="/profile">
+    <input type="submit" value="Account Preferences">
+  </form>
 </div>
 
 <div id="logout">
-	<form method="get" action="/logout">
-		<input type="submit" value="Logout">
-	</form>
+  <form method="get" action="/logout">
+    <input type="submit" value="Logout">
+  </form>
 </div> 
+
 
