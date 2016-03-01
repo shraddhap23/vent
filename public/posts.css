@@ -6,3 +6,73 @@ body {
 h1{
   font-family: 'Amatic SC', cursive;
 }
+
+h2 {
+  font-family: 'Amatic SC', cursive;
+}
+
+
+#preferences{
+  font-family: 'Amatic SC', cursive;
+
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background: purple; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    margin-bottom: 20px;
+    margin-left: 150px;
+    color: white;
+}
+
+input[type=text]{
+  height: 100px;
+  width: 500px;
+}
+
+
+#accountInfo {
+
+  width: 100px;
+  background-color: white;
+  opacity: 0.8;
+  font-family: 'Amatic SC', cursive;
+  margin-left: 20px;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+
+h3 {
+  color: pink;
+  display: inline-block;
+  margin-left: 10px;
+
+}
+
+p {
+  color: #FF00CC;
+  margin-left: 10px;
+}
+
+h2 {
+
+  font-size: 70px;
+}
+
+/*.user_post {
+  background-color: white;
+  opacity: 0.5;
+}*/
+
+.post_body{
+  height: 300px;
+}
+
+.user_post{
+  display: inline-block;
+}

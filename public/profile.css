@@ -1,0 +1,9 @@
+body {
+  background-image: url("images/profiles.gif");
+  background-repeat: no-repeat;
+}
+
+.account {
+  border-style: solid;
+}
+
