@@ -8,6 +8,9 @@ enable :sessions
 set :sessions, true
 
 get "/" do
+  if session[:user_id]
+    redirect "/posts"
+  end
   erb :index
 end
 
@@ -87,7 +90,7 @@ get "/profile" do
 end
 
 post "/update" do
-  @user = current_user
+  user = current_user
   user.update_attribute(:name, params[:name]) 
   user.update_attribute(:email, params[:email]) 
   user.update_attribute(:password, params[:password]) 
@@ -95,7 +98,7 @@ post "/update" do
 end
 
 post "/delete" do
-  @user = current_user
+  user = current_user
   user.destroy
   user_posts = Post.where(user_id: user.id)
   user_posts.each do |post|
