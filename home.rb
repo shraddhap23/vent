@@ -46,15 +46,11 @@ post "/login" do
   end 
 end
 
-def current_user
-  @current_user = User.find(session[:user_id])
-end 
-
 get "/posts" do 
   if session[:user_id] == nil
     redirect "/"
   end
-	
+
   @ten_posts = Post.last(10)
   @users = User.find(session[:user_id])
   @posts = Post.where(user_id: session[:user_id])
@@ -83,17 +79,17 @@ end
 
 get "/profile" do 
   @user = current_user
-  if session[:user_id] = nil
+  if session[:user_id].nil?
     redirect "/"
   end
 	erb :profile
 end
 
 post "/update" do
-  user = current_user
-  user.update_attribute(:name, params[:name]) 
-  user.update_attribute(:email, params[:email]) 
-  user.update_attribute(:password, params[:password]) 
+  @user = current_user
+  @user.update_attribute(:name, params[:name]) 
+  @user.update_attribute(:email, params[:email]) 
+  @user.update_attribute(:password, params[:password]) 
   redirect "/profile"
 end
 
@@ -112,6 +108,10 @@ end
 get "/goback" do 
   @posts = Post.all
   erb :posts
+end 
+
+def current_user
+  @current_user = User.find(session[:user_id])
 end 
 
 
